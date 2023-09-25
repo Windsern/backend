@@ -1,0 +1,26 @@
+{% extends 'lab_01/base.html' %}
+
+{% block title %}Список заказов{% endblock %}
+
+{% comment %}
+{% block content %}
+<ul>
+    {% for order in data.orders %}
+        <li><a href="{% url 'order_url' order.id %}">{{ order.title }}</a> </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+{% endcomment %}
+
+
+{% block content %}
+<ul>
+    {% for order in data.orders %}
+       {% include 'lab_01/order_element.html' with element=order %}
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+
+<!--<!doctype html>-->
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/examp.css' %}">
+    </head>
+    <body>
+
+        <h1 style="text-align: center; color: #000000; padding-top: 12px; padding-bottom: 15px; background-color: #36bbce; border-radius: 7px; border: 4px solid #000000;">
+            Строящиеся здания МГТУ им. Н.Э.Баумана
+        </h1>
+
+        {% block content %}{% endblock %}
+
+        <form method="GET" action="{% url 'building' %}">
+            <input type="text" name="building_keyword" placeholder="Название здания">
+            <button type="submit">Применить фильтр</button>
+        </form>
+    </body>
+</html>
+

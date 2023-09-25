@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block name %} Строящиеся здания МГТУ им. Н.Э.Баумана {% endblock %}
+
+{% block content %}
+    <div class="grid-container">
+        {% for build in data.builds %}
+            <div class="grid-item">
+                <a href="{% url 'build_url' build.id %}">
+                    <img src="{% static 'images/'|add:build.title|add:'.jpg' %}" style="width: 100%; height: 50%;">
+                    <p style="font-size: 20px">{{ build.title }}</p>
+                </a>
+            </div>
+        {% empty %}
+            <p>Список пуст</p>
+        {% endfor %}
+    </div>
+{% endblock %}
