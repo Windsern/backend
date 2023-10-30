@@ -5,7 +5,7 @@
 {% block title %}{{ data.build.title }}{% endblock %}
 
 {% block content %}
-    {% for data in database_ %}
+    {% for data in data.builds %}
         <div class="grid-item">
             <div class="card">
                 <div class="card-content">
@@ -17,7 +17,7 @@
                     <p>Год постройки: {{ data.year_building }}</p>
                     <p>Разрешение на строительство: {{ data.document_building }}</p>
                     <p>Проектные документы: {{ data.project_document }}</p>
-                    <p>Статус: {{ data.status }}</p>
+{#                    <p>Статус: {{ data.status }}</p>#}
                     </div>
                 <img src="{% static 'images/'|add:data.title|add:'.jpg' %}" class="card-image" style="width: 40%">
                 </div>

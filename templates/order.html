@@ -16,7 +16,7 @@
                     <p>Год постройки: {{ data.build.year_building }}</p>
                     <p>Разрешение на строительство: {{ data.build.document_building }}</p>
                     <p>Проектные документы: {{ data.build.project_document }}</p>
-                    <p>Статус: {{ data.build.status }}</p>
+{#                    <p>Статус: {{ data.build.status }}</p>#}
                 </div>
                 <img src="{% static 'images/'|add:data.build.title|add:'.jpg' %}" class="card-image" style="width: 40%">
             </div>

@@ -1,0 +1,88 @@
+
+/* CSS стили для карточки */
+.card {
+    border: 1px solid #cccccc;
+    margin: 10px;
+    max-width: 1200px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали по центру */
+}
+
+.text-content {
+    flex: 1; /* Занимает всю доступную ширину внутри .card-content */
+    padding: 10px;
+}
+
+.card-image {
+    max-width: 100px; /* Ширина изображения */
+    height: auto;
+}
+
+.card img {
+    max-width: 10%;
+    height: auto;
+    padding: 25px;
+}
+
+/*CSS стили для сетки*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Это создаст гибкую сетку с колонками шириной 200px и автоматически адаптирующимися к размеру контейнера */
+    gap: 20px; /* Расстояние между элементами сетки */
+}
+
+.grid-item {
+    text-align: center;
+    border: 4px solid #FF4E40;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 15px;
+    height: auto;
+    /*background: rgba(204, 204, 204, 0.7);;*/
+    background-color: #ffc340;
+    background-size: cover;
+    background-position: center center;
+}
+
+.grid-item img {
+    max-width: 100%;
+    border-radius: 7px;
+    height: auto;
+}
+
+.grid-item a {
+    text-decoration: none;
+    color: #333; /* Цвет текста для ссылок */
+}
+
+.grid-item p {
+    margin: 10px 0; /* Отступы для текста под изображением */
+    font-weight: bold;
+}
+
+/*body {*/
+    /*background-image: url('/static/images/rocket.jpg');*/
+    /*background-size: cover;*/
+    /*filter: blur(5px); !* Коэффициент размытия *!*/
+    /*background-position: center center;*/
+    /* Дополнительные стили для body, если необходимо */
+/*}*/
+
+/*.background-image {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    z-index: -1; !* Помещаем фоновое изображение под контентом *!*/
+/*}*/
+
+/*.background-image img {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*    filter: blur(5px); !* Установите значение размытия по вашему желанию (5px - это пример) *!*/
+/*}*/

@@ -1,11 +1,11 @@
 {% load static %}
 
-<!--<!doctype html>-->
+<!doctype html>
 <html lang="en" class="h-100">
     <head>
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{% static '/css/examp.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
     </head>
     <body>
 
@@ -16,9 +16,10 @@
         {% block content %}{% endblock %}
 
         <form method="GET" action="{% url 'building' %}">
-            <input type="text" name="building_keyword" placeholder="Название здания">
+            <input type="text" name="building_keyword" placeholder="Название здания" value="{{ building_keyword }}">
             <button type="submit">Применить фильтр</button>
         </form>
+
     </body>
 </html>
 

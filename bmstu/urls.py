@@ -23,8 +23,12 @@ from bmstu_lab import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.GetBuilds),
-    path('order/<int:id>/', views.GetBuild, name='build_url'),
-    path('', views.building, name='building'),
+    path('build/<int:id>/', views.GetBuild, name='build_url'),
+    path('', views.GetBuilds, name='building'),
 
+    # Для работы с изменением статуса в здания (услуги) нужна работа с БД
+    path('delete_building/', views.delete_building, name='delete_building'),
 
+    # path('', views.bookList),
+    # path('book/<int:id>/', views.GetBook, name='book_url')
 ]
