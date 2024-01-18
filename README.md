@@ -1,2 +1,2 @@
-# Development-of-Internet-applications
+# Backend
 Курс "Разработка интернет-приложений"
