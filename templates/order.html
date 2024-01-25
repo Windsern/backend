@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{#{% block title %}{{ data.order.name }}{% endblock %}#}
+{% block title %}{{ data.build.title }}{% endblock %}
+
+{% block content %}
+{#    <div class="grid-item">#}
+{#        <div class="card">#}
+{#            <div class="card-content">#}
+{#                <div class="text-content">#}
+{#                    <p>Объект: {{ data.build.title }}</p>#}
+{#                    <p>Адресс: {{ data.build.address }}</p>#}
+{#                    <p>Тип строения: {{ data.build.type_building }}</p>#}
+{#                    <p>Количество этажей: {{ data.build.count_floor }}</p>#}
+{#                    <p>Год постройки: {{ data.build.year_building }}</p>#}
+{#                    <p>Разрешение на строительство: {{ data.build.document_building }}</p>#}
+{#                    <p>Проектные документы: {{ data.build.project_document }}</p>#}
+{#                    <p>Статус: {{ data.build.status }}</p>#}
+{#                </div>#}
+{#                <img src="{% static 'images/'|add:data.build.title|add:'.png' %}" class="card-image" style="width: 40%">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="grid-item">
+        <div class="card">
+            <div class="card-content">
+                <div class="text-content">
+                    <p>Объект: {{ data.build.title }}</p>
+                    <p>Адресс: {{ data.build.address }}</p>
+                    <p>Тип строения: {{ data.build.type_building }}</p>
+                    <p>Количество этажей: {{ data.build.count_floor }}</p>
+                    <p>Год постройки: {{ data.build.year_building }}</p>
+                    <p>Разрешение на строительство: {{ data.build.document_building }}</p>
+                    <p>Проектные документы: {{ data.build.project_document }}</p>
+{#                    <p>Статус: {{ data.build.status }}</p>#}
+                </div>
+                <img src="{% static '/'|add:data.build.title|add:'.png' %}" class="card-image" style="width: 40%">
+            </div>
+        </div>
+    </div>
+{% endblock %}

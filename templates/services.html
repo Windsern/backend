@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{#{% block title %}{{ data.order.name }}{% endblock %}#}
+{% block title %}{{ data.build.title }}{% endblock %}
+
+{% block content %}
+{#    {% for data in data.builds %}#}
+{#        <div class="grid-item">#}
+{#            <div class="card">#}
+{#                <div class="card-content">#}
+{#                    <div class="text-content">#}
+{#                    <p>Объект: {{ data.title }}</p>#}
+{#                    <p>Адресс: {{ data.address }}</p>#}
+{#                    <p>Тип строения: {{ data.type_building }}</p>#}
+{#                    <p>Количество этажей: {{ data.count_floor }}</p>#}
+{#                    <p>Год постройки: {{ data.year_building }}</p>#}
+{#                    <p>Разрешение на строительство: {{ data.document_building }}</p>#}
+{#                    <p>Проектные документы: {{ data.project_document }}</p>#}
+{#                    <p>Статус: {{ data.status }}</p>#}
+{#                    </div>#}
+{#                <img src="{% static 'images/'|add:data.title|add:'.png' %}" class="card-image" style="width: 40%">#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% empty %}#}
+{#            <h3 style="color: #cccccc">Здание отсутствует</h3>#}
+{#    {% endfor %}#}
+    {% for data in data.builds %}
+        <div class="grid-item">
+            <div class="card">
+                <div class="card-content">
+                    <div class="text-content">
+                    <p>Объект: {{ data.title }}</p>
+                    <p>Адресс: {{ data.address }}</p>
+                    <p>Тип строения: {{ data.type_building }}</p>
+                    <p>Количество этажей: {{ data.count_floor }}</p>
+                    <p>Год постройки: {{ data.year_building }}</p>
+                    <p>Разрешение на строительство: {{ data.document_building }}</p>
+                    <p>Проектные документы: {{ data.project_document }}</p>
+{#                    <p>Статус: {{ data.status }}</p>#}
+                    </div>
+                <img src="{% static '/'|add:data.title|add:'.png' %}" class="card-image" style="width: 40%">
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <h3 style="color: #cccccc">Здание отсутствует</h3>
+    {% endfor %}
+{% endblock %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}

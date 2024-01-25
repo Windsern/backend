@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block name %} Строящиеся здания МГТУ им. Н.Э.Баумана {% endblock %}
+
+{% block content %}
+{#    <div class="grid-container">#}
+{#        {% for build in data.builds %}#}
+{#            <div class="grid-item">#}
+{#                <a href="{% url 'build_url' build.building_id %}">#}
+{#                    <img src="{% static 'images/'|add:build.title|add:'.png' %}" style="width: 100%; height: 50%;">#}
+{#                    <p style="font-size: 20px">{{ build.title }}</p>#}
+{#                </a>#}
+{#                <form method="POST" action="{% url 'delete_building' %}">#}
+{#                    {% csrf_token %}#}
+{#                    <input type="text" name="building_id" value="{{ build.building_id }}" style="display: none;">#}
+{#                    <button type="submit">Удалить здание</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        {% empty %}#}
+{#            <p>Список пуст</p>#}
+{#        {% endfor %}#}
+{#    </div>#}
+    <div class="grid-container">
+        {% for build in data.builds %}
+            <div class="grid-item">
+                <a href="{% url 'build_url' build.building_id %}">
+                    <img src="{% static '/'|add:build.title|add:'.png' %}" style="width: 100%; height: 50%;">
+                    <p style="font-size: 20px">{{ build.title }}</p>
+                </a>
+                <form method="POST" action="{% url 'delete_building' %}">
+                    {% csrf_token %}
+                    <input type="text" name="building_id" value="{{ build.building_id }}" style="display: none;">
+                    <button type="submit">Удалить здание</button>
+                </form>
+            </div>
+        {% empty %}
+            <p>Список пуст</p>
+        {% endfor %}
+    </div>
+{% endblock %}
