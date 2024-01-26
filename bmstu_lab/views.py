@@ -20,77 +20,43 @@ from .models import *
 
 # access_token_lifetime = settings.JWT["ACCESS_TOKEN_LIFETIME"].total_seconds()
 
+def get_draft_checking_id():
+    checking = Checking.objects.filter(status=1).first()
+
+    if checking is None:
+        return None
+
+    return checking.checking_id
+
+
 @api_view(["GET"])
 def search_building(request):
     """
     Возвращает список строений
     """
 
-    def get_draft_checking_id():
-        checking = Checking.objects.filter(status=1).first()
-
-        if checking is None:
-            return None
-
-        return checking.checking_id
-
-    # query = request.GET.get("query", "")
-
     # Получим параметры запроса из URL
     title = request.GET.get('title')
-    address = request.GET.get('address')
-    type_building = request.GET.get('type_building')
-    count_floor = request.GET.get('count_floor')
-    year_building = request.GET.get('year_building')
-    document_building = request.GET.get('document_building')
-    project_document = request.GET.get('project_document')
-    status_building = request.GET.get('status_building')
-    status = request.GET.get('status')
 
     # Получение данные после запроса с БД (через ORM)
     building = Building.objects.filter(status=1)
 
     # Для лабораторной работы №3
-    # if title:
-    #     building = building.filter(title__icontains=title)
-
-    if title and address and type_building and count_floor and year_building and document_building and project_document\
-            and status_building and status is None:
-        pass
-    else:
-        # Применим фильтры на основе параметров запроса, если они предоставлены
-        if title:
-            building = building.filter(title__icontains=title)
-        if address:
-            building = building.filter(address__icontains=address)
-        if type_building:
-            building = building.filter(type_building__icontains=type_building)
-        if count_floor:
-            building = building.filter(count_floor=count_floor)
-        if year_building:
-            building = building.filter(year_building=year_building)
-        if document_building:
-            building = building.filter(document_building__icontains=document_building)
-        if project_document:
-            building = building.filter(project_document__icontains=project_document)
-        if status_building:
-            building = building.filter(status_building__icontains=status_building)
-        if status:
-            building = building.filter(status=status)
-
-
+    if title:
+        building = building.filter(title__icontains=title)
 
     serializer = BuildingSerializer(building, many=True)
 
-    return Response(serializer.data)
+    draft_checking = get_draft_checking_id()
+    # return Response(serializer.data)
 
     # Для лабораторной работы №3
-    # resp = {
-    #     "draft_checking": get_draft_checking_id(),
-    #     "checkings": serializer.data
-    # }
+    resp = {
+        "draft_checking": draft_checking if draft_checking else None,
+        "buildings": serializer.data
+    }
 
-    # return Response(resp)
+    return Response(resp)
 
 
 @api_view(['GET'])
@@ -182,11 +148,41 @@ def add_building_to_checking(request, building_id):
 
     building = Building.objects.get(pk=building_id)
 
+    draft_checking_id = get_draft_checking_id()
+
+    if draft_checking_id is None:
+        draft_checking = Checking.objects.create()
+    else:
+        draft_checking = Checking.objects.get(pk=draft_checking_id)
+
+    # draft_checking = Checking.objects.get(pk=draft_checking_id)
+
+    # Только одна строка или две (два разных варианта реализации)
+    # draft_checking = get_draft_checking_id()
+
+    # if draft_checking is None:
+    #     draft_checking = Checking.objects.create()
+
+    if CheckingsBuildings.objects.filter(checking_id=draft_checking, building_id=building).exists():
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    print(building)
+    print(draft_checking)
+
+    cons = CheckingsBuildings.objects.create(checking_id=draft_checking, building_id=building)
+    # cons.checking_id = draft_checking
+    # cons.building_id = building
+    # cons.save()
+
+    serializer = CheckingSerializer(draft_checking, many=False)
+
+    return Response(serializer.data)
+
     # draft_estimate = get_draft_checking_id()
 
-    checking = Checking.objects.filter(status=1).last()
-    # print(checking.title)
-
+    # checking = Checking.objects.filter(status=1).last()
+    # print(checking)
+    #
     # if checking is None:
     #     checking = Checking.objects.create(creation_time=datetime.now(timezone.utc), approving_date=None,
     #                                        publication_date=None)
@@ -199,15 +195,19 @@ def add_building_to_checking(request, building_id):
     #                 new_user = Users.objects.get(login="user1")
     #             checking.users = new_user
     #             checking.save()
-
-
-    checking.buildings.add(building)
-    checking.save()
+    #
+    # # print(checking)
+    # # print(building)
+    #
+    # checking.buildings.add(building)
+    # checking.save()
 
     # cities - это cities = models.ManyToManyField(City, verbose_name="Города", null=True)
-    serializer = CheckingSerializer(checking, many=True)
+    # serializer = CheckingSerializer(checking.buildings, many=True)
 
-    return Response(serializer.data)
+
+
+    # return Response(serializer.data)
 
 
 @api_view(["GET"])

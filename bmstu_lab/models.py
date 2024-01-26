@@ -121,16 +121,20 @@ class Checking(models.Model):
 
 
 class CheckingsBuildings(models.Model):
-    # id = models.BigAutoField(primary_key=True, serialize=False)
     building_id = models.ForeignKey(
         Building,
         on_delete=models.CASCADE,  # Это действие, которое будет выполнено при удалении связанной записи
         db_column='building_id',  # Имя поля в базе данных
+        blank=True,
+        null=True
     )
+    # id = models.BigAutoField(primary_key=True, serialize=False)
     checking_id = models.ForeignKey(
         Checking,
         on_delete=models.CASCADE,  # Это действие, которое будет выполнено при удалении связанной записи
         db_column='checking_id',  # Имя поля в базе данных
+        blank=True,
+        null=True
     )
     class Meta:
         managed = False
