@@ -87,13 +87,13 @@ class Checking(models.Model):
     # status = models.CharField(max_length=15)
     status = models.IntegerField(choices=STATUS_CHOICES, default=1, verbose_name="Статус")
 
-    creation_time = models.DateField(verbose_name="Дата создания")
-    approving_date = models.DateField(verbose_name="Дата утверждения")
-    publication_date = models.DateField(verbose_name="Дата публикации")
+    # creation_time = models.DateField(verbose_name="Дата создания")
+    # approving_date = models.DateField(verbose_name="Дата утверждения")
+    # publication_date = models.DateField(verbose_name="Дата публикации")
 
-    # creation_time = models.DateTimeField(default=timezone.now)
-    # approving_date = models.DateTimeField(null=True, blank=True)
-    # publication_date = models.DateTimeField(null=True, blank=True)
+    creation_time = models.DateTimeField(default=timezone.now)
+    approving_date = models.DateTimeField(null=True, blank=True)
+    publication_date = models.DateTimeField(null=True, blank=True)
 
     buildings = models.ManyToManyField(Building, through='CheckingsBuildings', verbose_name="Строения")
     # buildings = models.ManyToManyField(Building, related_name='checkings', blank=True)
@@ -126,16 +126,21 @@ class CheckingsBuildings(models.Model):
         on_delete=models.CASCADE,  # Это действие, которое будет выполнено при удалении связанной записи
         db_column='building_id',  # Имя поля в базе данных
         blank=True,
-        null=True
+        # null=True,
+        primary_key=True,
+        # unique=True
     )
-    # id = models.BigAutoField(primary_key=True, serialize=False)
+    # id_s = models.BigAutoField(primary_key=True, serialize=False)
     checking_id = models.ForeignKey(
         Checking,
         on_delete=models.CASCADE,  # Это действие, которое будет выполнено при удалении связанной записи
         db_column='checking_id',  # Имя поля в базе данных
         blank=True,
-        null=True
+        # null=True,
+        # primary_key=True,
+        # unique=True
     )
     class Meta:
         managed = False
         db_table = 'checkingsbuildings'
+        # unique_together = ('building_id', 'checking_id')

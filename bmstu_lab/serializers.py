@@ -27,11 +27,11 @@ class CheckingSerializer(serializers.ModelSerializer):
         # Поля, которые мы сериализуем (Все поля)
         fields = '__all__'
 
-    # def to_representation(self, instance):
-    #     representation = super().to_representation(instance)
-    #     representation['users'] = instance.users.login
-    #     representation['moderator'] = instance.moderator.login
-    #     return representation
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['users'] = instance.users.login
+        representation['moderator'] = instance.moderator.login
+        return representation
 
 class CheckingsBuildingsSerializer(serializers.ModelSerializer):
     class Meta:
