@@ -23,8 +23,8 @@ from bmstu_lab import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.GetBuilds),
-    path('order/<int:id>/', views.GetBuild, name='build_url'),
-    path('', views.building, name='building'),
+    path('order/<int:id>/', views.get_build, name='build'),
+    path('', views.GetBuilds, name='builds'),
 
 
 ]

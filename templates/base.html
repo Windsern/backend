@@ -15,8 +15,12 @@
 
         {% block content %}{% endblock %}
 
-        <form method="GET" action="{% url 'building' %}">
-            <input type="text" name="building_keyword" placeholder="Название здания">
+        <form method="GET" action="{% url 'builds' %}">
+            {% if data.building_keyword == 'None' %}
+                <input type="text" name="building_keyword" placeholder="Название здания">
+            {% else %}
+                <input type="text" name="building_keyword" placeholder="Название здания" value="{{ data.building_keyword }}">
+            {% endif %}
             <button type="submit">Применить фильтр</button>
         </form>
     </body>

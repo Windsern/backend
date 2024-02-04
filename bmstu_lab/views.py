@@ -35,13 +35,31 @@ database_ = [
 
 
 def GetBuilds(request):
+    building_keyword = request.GET.get('building_keyword')
+
+    # Преобразовать ключевое слово в строку для поиска в базе данных
+    building_keyword = str(building_keyword)
+
+    # Получить список услуг из базы данных
+    # building_services = []
+
+
+    if building_keyword == "None":
+        filtered_buildings = database_
+    else:
+        filtered_buildings = [
+            service for service in database_
+            if building_keyword.lower() in service['title'].lower()
+        ]
+
+
     return render(request, 'orders.html', {'data': {
-        'current_date': date.today(),
-        'builds': database_
-    }})
+            'current_date': date.today(),
+            'builds': filtered_buildings,
+            'building_keyword': building_keyword
+        }})
 
-
-def GetBuild(request, id):
+def get_build(request, id):
     # Найдем объект в списке по 'id'
     order = None
     for obj in database_:
@@ -58,7 +76,7 @@ def GetBuild(request, id):
     }})
 
 
-def building(request):
+def get_builds(request):
     building_keyword = request.GET.get('building_keyword')
 
     # Преобразовать ключевое слово в строку для поиска в базе данных
@@ -72,4 +90,8 @@ def building(request):
         if building_keyword.lower() == service['title'].lower()
     ]
 
-    return render(request, 'services.html', {'database_': building_services})
+    # return render(request, 'services.html', {'database_': building_services})
+    return render(request, 'services.html', {'data': {
+        'current_date': date.today(),
+        'builds': database_
+    }})
