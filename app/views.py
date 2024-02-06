@@ -212,9 +212,22 @@ def update_status_user(request, verification_id):
     verification.date_formation = timezone.now()
     verification.save()
 
+    items = BuildingVerification.objects.filter(verification=verification)
+    for item in items:
+        calculate_building_state(verification_id, item.building.pk)
+
     serializer = VerificationSerializer(verification, many=False)
 
     return Response(serializer.data)
+
+
+def calculate_building_state(verification_id, building_id):
+    data = {
+        "verification_id": verification_id,
+        "building_id": building_id
+    }
+
+    requests.post("http://127.0.0.1:8080/calc_building_state/", json=data, timeout=3)
 
 
 @api_view(["PUT"])
@@ -277,7 +290,7 @@ def delete_building_from_verification(request, verification_id, building_id):
 
 
 @api_view(["PUT"])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsRemoteService])
 def update_building_in_verification(request, verification_id, building_id):
     if not BuildingVerification.objects.filter(building_id=building_id, verification_id=verification_id).exists():
         return Response(status=status.HTTP_404_NOT_FOUND)

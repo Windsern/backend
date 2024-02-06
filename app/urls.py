@@ -25,6 +25,6 @@ urlpatterns = [
     # Набор методов для аутентификации и авторизации
     path("api/register/", register),
     path("api/login/", login),
-    path("api/verification/", verification),
+    path("api/check/", verification),
     path("api/logout/", logout)
 ]

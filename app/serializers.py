@@ -4,6 +4,11 @@ from .models import *
 
 
 class BuildingSerializer(serializers.ModelSerializer):
+    state = serializers.SerializerMethodField()
+
+    def get_state(self, building):
+        return self.context.get("state", "")
+
     class Meta:
         model = Building
         fields = "__all__"
@@ -25,10 +30,25 @@ class VerificationsSerializer(serializers.ModelSerializer):
 
 
 class VerificationSerializer(serializers.ModelSerializer):
-    buildings = BuildingSerializer(read_only=True, many=True)
+    buildings = serializers.SerializerMethodField()
     owner = UserSerializer(read_only=True, many=False)
     moderator = UserSerializer(read_only=True, many=False)
 
+    def get_buildings(self, verification):
+        items = BuildingVerification.objects.filter(verification_id=verification.pk)
+
+        buildings = []
+        for item in items:
+            serializer = BuildingSerializer(
+                item.building,
+                context={
+                    "state": item.state
+                }
+            )
+            buildings.append(serializer.data)
+
+        return buildings
+    
     class Meta:
         model = Verification
         fields = "__all__"

@@ -23,8 +23,8 @@ class Building(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Корпус"
-        verbose_name_plural = "Корпуса"
+        verbose_name = "Здание"
+        verbose_name_plural = "Здания"
 
 
 class CustomUserManager(BaseUserManager):

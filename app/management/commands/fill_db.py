@@ -47,14 +47,6 @@ def add_buildings():
         image="buildings/5.png"
     )
 
-    Building.objects.create(
-        name="Комплекс общежитий",
-        description="2-я Бауманская улица, 13",
-        floors=15,
-        year=2021,
-        image="buildings/6.png"
-    )
-
     print("Услуги добавлены")
 
 
