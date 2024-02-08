@@ -17,12 +17,26 @@ class BuildingSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('name',)
+        fields = "__all__"
 
 
 class VerificationsSerializer(serializers.ModelSerializer):
-    owner = UserSerializer(read_only=True, many=False)
-    moderator = UserSerializer(read_only=True, many=False)
+    owner = serializers.SerializerMethodField()
+    moderator = serializers.SerializerMethodField()
+    buildings_calculated = serializers.SerializerMethodField()
+
+    def get_owner(self, order):
+        return order.owner.name
+
+    def get_moderator(self, order):
+        if order.moderator:
+            return order.moderator.name
+
+        return ""
+
+    def get_buildings_calculated(self, verification):
+        items = BuildingVerification.objects.filter(verification=verification)
+        return items.filter(state__gte=0).count()
 
     class Meta:
         model = Verification
@@ -31,11 +45,20 @@ class VerificationsSerializer(serializers.ModelSerializer):
 
 class VerificationSerializer(serializers.ModelSerializer):
     buildings = serializers.SerializerMethodField()
-    owner = UserSerializer(read_only=True, many=False)
-    moderator = UserSerializer(read_only=True, many=False)
+    owner = serializers.SerializerMethodField()
+    moderator = serializers.SerializerMethodField()
+
+    def get_owner(self, order):
+        return order.owner.name
+
+    def get_moderator(self, order):
+        if order.moderator:
+            return order.moderator.name
+
+        return ""
 
     def get_buildings(self, verification):
-        items = BuildingVerification.objects.filter(verification_id=verification.pk)
+        items = BuildingVerification.objects.filter(verification=verification)
 
         buildings = []
         for item in items:
@@ -48,7 +71,7 @@ class VerificationSerializer(serializers.ModelSerializer):
             buildings.append(serializer.data)
 
         return buildings
-    
+
     class Meta:
         model = Verification
         fields = "__all__"

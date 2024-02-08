@@ -152,8 +152,8 @@ CACHES = {
 }
 
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_STORAGE_BUCKET_NAME = 'images'
 AWS_ACCESS_KEY_ID = 'h5CdpYHrzqvczXYeQNOv'
 AWS_SECRET_ACCESS_KEY = 'QYMr43khS5OD8F4Xgi3ZMsG68NBmzabRdC6jWDHm'

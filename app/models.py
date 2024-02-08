@@ -94,7 +94,7 @@ class Verification(models.Model):
 class BuildingVerification(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE, blank=True, null=True)
     verification = models.ForeignKey(Verification, on_delete=models.CASCADE, blank=True, null=True)
-    state = models.IntegerField(verbose_name="Фактический статус готовности", blank=True, null=True)
+    state = models.IntegerField(verbose_name="Фактический статус готовности", default=-1)
 
     def __str__(self):
         return "Проверка-Корпус №" + str(self.pk)
