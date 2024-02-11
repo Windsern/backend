@@ -45,6 +45,7 @@ class VerificationsSerializer(serializers.ModelSerializer):
 
 class VerificationSerializer(serializers.ModelSerializer):
     buildings = serializers.SerializerMethodField()
+    buildings_calculated = serializers.SerializerMethodField()
     owner = serializers.SerializerMethodField()
     moderator = serializers.SerializerMethodField()
 
@@ -71,6 +72,10 @@ class VerificationSerializer(serializers.ModelSerializer):
             buildings.append(serializer.data)
 
         return buildings
+
+    def get_buildings_calculated(self, verification):
+        items = BuildingVerification.objects.filter(verification=verification)
+        return items.filter(state__gte=0).count()
 
     class Meta:
         model = Verification
