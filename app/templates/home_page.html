@@ -1,0 +1,99 @@
+{% extends 'base_page.html' %}
+
+{% load static %}
+
+{% block title %}
+   Корпуса
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="content-wrapper">
+
+            <div class="cards-wrapper">
+
+                <div class="top">
+
+                    <h2>Корпуса</h2>
+
+                    <div class="right-container">
+
+                        {% if draft_order_id %}
+
+                            <a href="/orders/{{ draft_order_id }}">
+                                Новая проверка
+                            </a>
+
+                        {% else  %}
+
+                            <span href="/" class="disabled">
+                                Новая проверка
+                            </span>
+
+                        {% endif %}
+
+                        <form class="search-bar-wrapper" method="GET" action="/">
+
+                            {% csrf_token %}
+
+                            <input type="text" placeholder="Поиск" autocomplete="off" name="query" value="{{ query }}">
+
+                            <button type="submit">
+                                Поиск
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="bottom">
+
+                    {% for building in buildings %}
+
+                        <div class="card-wrapper">
+
+                            <div class="preview">
+                                <img src="http://127.0.0.1:9000/images/{{ building.image }}">
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="content-top">
+
+                                    <h3 class="title">{{ building.name }}</h3>
+
+                                </div>
+
+                                <div class="content-bottom">
+
+                                    <a href="buildings/{{building.id}}/add_to_order/" class="add-to-verification-link">
+                                        <span>Добавить в проверку</span>
+                                    </a>
+
+                                     <a href="buildings/{{building.id}}/" class="details-link">
+                                        <span>Подробнее</span>
+                                    </a>
+
+                                    <a href="buildings/{{ building.id }}/delete/" class="delete-link">
+                                        <span>Удалить</span>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+{% endblock %}

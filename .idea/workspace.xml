@@ -1,111 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ebe45d3-b456-4bf3-a900-8f67f3f3a5fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bmstu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bmstu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/config.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/iam/format.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/iam/sts/0RQM0A4R077L847GPP4Q/identity.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/iam/sts/Q71FI8LZ2YF3HJETMRHG/identity.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/iam/sts/QWS72BU5KP73M8JRJC3X/identity.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/config/iam/sts/W3QZLX82ORRICVPPKZVT/identity.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/format.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/pool.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/.minio.sys/tmp/1f0ee482-014d-44f9-9543-151072414a39" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmstu/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmstu/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/backup/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/backup/0002_delete_checkingsbuildings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/backup/0003_checkingsbuildings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/backup/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/basic_auth_helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/jwt_helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/management/commands/add_users.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/management/commands/clean_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/management/commands/fill_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/management/commands/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/permissions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Библиотечный корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Дворец технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Дом РФ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Квантум парк.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Комплекс общежитий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Научно-образовательный корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Образовательно-досуговый центр Спектр.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Образовательный комплекс.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images/Центр биомедицинских систем и технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Библиотечный корпус.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Дворец технологий.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Дом РФ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Квантум парк.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Комплекс общежитий.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Научно-образовательный корпус.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Образовательно-досуговый центр Спектр.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Образовательный комплекс.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_jpg/Центр биомедицинских систем и технологий.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Библиотечный корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Дворец технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Дом РФ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Квантум парк.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Комплекс общежитий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Научно-образовательный корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Образовательно-досуговый центр Спектр.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Образовательный комплекс.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/static/images_png/Центр биомедицинских систем и технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmstu_lab/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Библиотечный_корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Дворец_технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Дом_РФ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Квантум_парк.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Комплекс_общежитий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Научно-образовательный_корпус.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Образовательно-досуговый_центр_Спектр.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Образовательный_комплекс.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Центр_биомедицинских_систем_и_технологий.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order_element.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" />
+    <list default="true" id="6463e817-420f-4f5a-80d3-68c5afcdf023" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,29 +15,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2bDKAV0MF5M8Dq48kXtH1WUHWS2" />
+  <component name="ProjectId" id="2cmClzzHZbqjT5gfhUE5BSrMSFq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vlad/Downloads/Лаб №5/bmstu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jmiha\YandexDisk\Вуз\РИП\Заказы\Ховен\Лаб №5\bmstu\app" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager">
     <configuration name="bmstu" type="Python.DjangoServer" factoryName="Django server">
       <module name="bmstu" />
@@ -165,26 +59,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6ebe45d3-b456-4bf3-a900-8f67f3f3a5fe" name="Changes" comment="" />
-      <created>1705744069870</created>
+      <changelist id="6463e817-420f-4f5a-80d3-68c5afcdf023" name="Changes" comment="" />
+      <created>1708707524898</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705744069870</updated>
-      <workItem from="1705744072102" duration="713000" />
-      <workItem from="1705773970233" duration="676000" />
-      <workItem from="1705776822604" duration="4167000" />
-      <workItem from="1705782815434" duration="139000" />
-      <workItem from="1705832450317" duration="5534000" />
-      <workItem from="1705842417220" duration="613000" />
-      <workItem from="1705915449242" duration="912000" />
-      <workItem from="1705918797994" duration="1319000" />
-      <workItem from="1705923468383" duration="2697000" />
-      <workItem from="1705954131991" duration="1192000" />
-      <workItem from="1706479768111" duration="1167000" />
-      <workItem from="1707055906444" duration="2877000" />
-      <workItem from="1707062973984" duration="6166000" />
-      <workItem from="1707222515120" duration="485000" />
-      <workItem from="1707223037641" duration="7000" />
+      <updated>1708707524898</updated>
+      <workItem from="1708707526392" duration="631000" />
+      <workItem from="1708884948816" duration="134000" />
     </task>
     <servers />
   </component>

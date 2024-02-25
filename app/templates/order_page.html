@@ -1,0 +1,73 @@
+{% extends 'home_page.html' %}
+
+{% load static %}
+
+{% block title %}
+   Рассчёт
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="content-wrapper">
+
+            <div class="cards-wrapper">
+
+                <div class="top">
+
+                    <h2>Заявка №{{ verification.id }}</h2>
+
+                    <a href="/">
+                        Назад
+                    </a>
+
+                </div>
+
+                <div class="bottom-container">
+
+                    <div class="verification-info-wrapper">
+
+                        <span>Дата создания {{ verification.date_created }}</span>
+
+                    </div>
+
+                    <h2>Корпуса</h2>
+
+                    <div class="buildings-container">
+
+                        {% for building in buildings %}
+
+                            <div class="card-wrapper">
+
+                                <div class="preview">
+                                    <img src="http://127.0.0.1:9000/images/{{ building.image }}">
+                                </div>
+
+                                <div class="card-content">
+
+                                    <div class="content-top">
+
+                                        <h3 class="title">{{ building.name }}</h3>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="bottom-buttons-container">
+                        <a href="/orders/{{ verification.id }}/delete/">Очистить</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+{% endblock %}
